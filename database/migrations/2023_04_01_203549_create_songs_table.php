@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('album', 100);
             $table->string('author', 100);
             $table->string('editor', 100);
-            $table->string('album', 100);
             $table->float('length');
             $table->string('poster', 100);
 
