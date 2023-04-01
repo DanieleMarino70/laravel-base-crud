@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('homepage');
 })->name('home');
 
-Route::resource('song', SongController::class);
+Route::resource('songs', SongController::class);
