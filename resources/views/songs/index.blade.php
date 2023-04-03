@@ -1,12 +1,11 @@
-<div>a</div>
 @extends('layouts.app')
 
 @section('title', "Songs")
 
 @section('content')
-    <div class="container rounded-2">
+    <div class="container">
             <h5>Canzoni</h5>
-            <div class="row g-3 text-center">
+            <div class="row row-cols-4 g-3 text-center">
                 @forelse ($songs as $song)
                 
                     @include('partials._songcard')
