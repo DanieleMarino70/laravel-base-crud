@@ -38,6 +38,19 @@ class SongController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'title' => 'required|string|max:100',
+            'album' => 'required|string|max:100',
+            'author' => 'required|string|max:100',
+            'editor' => 'required|string|max:100',
+            'length' => 'required|decimal:2,3',
+            'poster' => 'required|string|'
+
+        ], [
+            '*.required' => 'il :attribute è obbligatorio'
+        ]);
+
         $data = $request->all();
 
         $song = new Song;
@@ -49,7 +62,7 @@ class SongController extends Controller
         $song->poster = $data['poster'];
         $song->save();
 
-        return view('songs.show', compact('song'));
+        return redirect()->route('songs.show', compact('song'));
     }
 
     /**
